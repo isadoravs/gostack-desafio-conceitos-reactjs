@@ -16,7 +16,10 @@ function App() {
       title: `Repo ${Date.now()}`,
       techs: ["React", "Node.js"],
     });
-    setRepositories([...repositories, result.data]);
+
+    if (result.data) {
+      setRepositories([...repositories, result.data]);
+    }
   }
 
   async function handleRemoveRepository(id) {
